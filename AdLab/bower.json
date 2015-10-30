@@ -1,0 +1,18 @@
+{
+  "name": "AdLab",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Renan Augusto <renan.augusto18@hotmail.com>"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
