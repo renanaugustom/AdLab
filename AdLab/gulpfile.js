@@ -1,27 +1,31 @@
 ﻿var gulp = require('gulp');
 var del = require('del');
+var concat = require('gulp-concat');
 var inject = require('gulp-inject');
 
 var appSourcesAndCSS = [
     './app/app.js',
-    './app/js/services/*.js',
-    './app/js/controllers/*.js',
-    './app/js/directives/*.js',
+    './app/base/*.js',
+    './app/services/*.js',
+    './app/controllers/*.js',
+    './app/directives/*.js',
     '!app/**/*.min.js',
-    './app/**/*.css'
+    './content/**/*.css',
+    '!./content/login.css',
 ];
 
 var thirdPartySources = [
-    './bower_components/jquery/dist/jquery.min.js',
+    './bower_components/jquery/jquery.min.js',
     './bower_components/angular/angular.min.js',
-    './bower_components/angular-ui-route/release/angular-ui-router.min.js',
+    './bower_components/angular-ui-router/release/angular-ui-router.min.js',
+    './bower_components/a0-angular-storage/dist/angular-storage.min.js',
     './bower_components/bootstrap/dist/js/bootstrap.min.js',
     './bower_components/bootstrap/dist/css/bootstrap.min.css'
 ];
 
 var debugInjectSrcs = [
-    './dist/lib/jquery.js',
-    './dist/lib/angular.js',
+    './dist/lib/angular.min.js',
+    './dist/lib/jquery.min.js',
     './dist/lib/*.js',
     './dist/lib/*.css'
 ];
