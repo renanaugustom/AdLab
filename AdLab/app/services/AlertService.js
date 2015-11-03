@@ -17,7 +17,7 @@
                 if (index != -1) {
                     $rootScope.alerts.splice(index, 1);
                 }
-            }, 5000)
+            }, 5000);
         };
 
         alertService.addError = function (mensagem) {

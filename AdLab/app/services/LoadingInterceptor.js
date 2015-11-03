@@ -15,7 +15,7 @@
 
                 // Show loader
                 $rootScope.$broadcast("loader_show");
-                return config || $q.when(config)
+                return config || $q.when(config);
 
             },
             response: function (response) {
@@ -38,6 +38,5 @@
                 return $q.reject(response);
             }
         };
-
     }
 })();

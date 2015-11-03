@@ -26,7 +26,7 @@ routes.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider,
 
 routes.run(function ($rootScope, $state, UserService, AlertService) {
     //TODO: Verify if user has permission to access the next route
-    
+
     $rootScope.$on('$stateChangeStart', function (event, next, nextParams, fromState) {
         AlertService.cleanAlerts();
         if (!UserService.isAuthenticated()) {
@@ -36,4 +36,4 @@ routes.run(function ($rootScope, $state, UserService, AlertService) {
             }
         }
     });
-})
+});

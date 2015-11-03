@@ -2,16 +2,20 @@
 var del = require('del');
 var concat = require('gulp-concat');
 var inject = require('gulp-inject');
+var jshint = require('gulp-jshint');
 
-var appSourcesAndCSS = [
+var appSourcesJs = [
     './app/app.js',
     './app/base/*.js',
     './app/services/*.js',
     './app/controllers/*.js',
     './app/directives/*.js',
-    '!app/**/*.min.js',
-    './content/**/*.css',
-    '!./content/login.css',
+    '!app/**/*.min.js'
+];
+
+var appSourcesCss = [
+     './content/**/*.css',
+    '!./content/login.css'
 ];
 
 var thirdPartySources = [
@@ -46,20 +50,31 @@ gulp.task('thirdParty', ['clean'], function () {
 gulp.task('debugIndex', ['thirdParty'], function () {
     var target = gulp.src('./index.html');
 
-    var appSources = gulp.src(appSourcesAndCSS, { read: false });
+    var jsAppSources = gulp.src(appSourcesJs, { read: false });
     var libSources = gulp.src(debugInjectSrcs, { read: false });
+    var cssAppSources = gulp.src(appSourcesCss, { read: false });
 
-    return doInject(target, appSources, libSources);
+    return doInject(target, jsAppSources, cssAppSources, libSources);
 });
 
-var doInject = function (target, appSrc, libSrc) {
+var doInject = function (target, jsAppSources, cssAppSources, libSrc) {
 
     var thirdPartyCSS = gulp.src(['./dist/lib/*.css']);
 
     return target.pipe(inject(libSrc, { name: 'thirdparty', addRootSlash: false }))
         .pipe(inject(thirdPartyCSS, { name: 'thirdpartycss', addRootSlash: false }))
-        .pipe(inject(appSrc, { addRootSlash: false }))
+        .pipe(inject(cssAppSources, { name: 'mycustomcss', addRootSlash: false }))
+        .pipe(inject(jsAppSources, { addRootSlash: false }))
         .pipe(gulp.dest('./'));
 };
 
+gulp.task('hint', function () {
+    return gulp.src(appSourcesJs)
+      .pipe(jshint())
+      .pipe(jshint.reporter('default'))
+      .pipe(jshint.reporter('fail'));
+});
+
 gulp.task('default', ['debugIndex'], function () { });
+
+gulp.task('dev', ['hint','debugIndex'], function () { });

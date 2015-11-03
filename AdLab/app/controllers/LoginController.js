@@ -10,7 +10,7 @@
         $scope.setOnLoginScreen(true);
 
         $scope.doLogin = function (user) {
-            if (user != null)
+            if (user !== null)
                 UserService.setCurrentUser(null);
 
             LoginService.login(user).success(function (data) {
