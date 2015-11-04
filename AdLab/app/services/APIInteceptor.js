@@ -2,7 +2,6 @@
     "use strict";
 
     angular.module('app.services').service('APIInterceptor', APIInterceptor);
-    APIInterceptor.$inject = ['$rootScope', '$q', 'UserService'];
 
     function APIInterceptor($rootScope, $q, UserService) {
 

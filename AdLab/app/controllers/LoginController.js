@@ -2,7 +2,6 @@
     "use strict";
 
     angular.module('app.controllers').controller('LoginCtrl', LoginCtrl);
-    LoginCtrl.$inject = ["$scope", "$rootScope", "$state", "LoginService", "UserService", "AlertService"];
 
     function LoginCtrl($scope, $rootScope, $state, LoginService, UserService, AlertService) {
         $scope.User = {};

@@ -2,7 +2,6 @@
     "use strict";
 
     angular.module('app.services').service('AlertService', AlertService);
-    AlertService.$inject = ['$rootScope', '$timeout'];
 
     function AlertService($rootScope, $timeout) {
         //TODO: Lock screen when the error alert show up

@@ -2,7 +2,6 @@
     "use strict";
 
     angular.module('app.directives').directive('loader', LoadingDirective);
-    LoadingDirective.$inject = ['$rootScope'];
 
     function LoadingDirective($rootScope) {
         return function ($scope, element, attrs) {

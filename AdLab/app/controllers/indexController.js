@@ -2,7 +2,6 @@
     "use strict";
 
     angular.module('app.controllers').controller('IndexController', IndexController);
-    IndexController.$inject = ['$rootScope', '$state', 'LoginService', 'UserService'];
 
     function IndexController($rootScope, $state, LoginService, UserService) {
        

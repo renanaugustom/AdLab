@@ -2,7 +2,6 @@
     "use strict";
 
     angular.module('app.controllers').controller('AccessDeniedController', AccessDeniedController);
-    AccessDeniedController.$inject = ['$rootScope', '$state'];
 
     function AccessDeniedController($rootScope, $state) {
 

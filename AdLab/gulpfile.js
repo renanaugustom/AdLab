@@ -3,6 +3,8 @@ var del = require('del');
 var concat = require('gulp-concat');
 var inject = require('gulp-inject');
 var jshint = require('gulp-jshint');
+var uglify = require('gulp-uglify');
+var ngAnnotate = require('gulp-ng-annotate');
 
 var appSourcesJs = [
     './app/app.js',
@@ -57,6 +59,16 @@ gulp.task('debugIndex', ['thirdParty'], function () {
     return doInject(target, jsAppSources, cssAppSources, libSources);
 });
 
+gulp.task('serverIndex', ['thirdParty'], function () {
+    var target = gulp.src('./index.html');
+
+    var jsAppSources = gulp.src(appSourcesJs).pipe(ngAnnotate()).pipe(uglify()).pipe(uglify()).pipe(concat('all.min.js')).pipe(gulp.dest('./dist/'));
+    var libSources = gulp.src(debugInjectSrcs);
+    var cssAppSources = gulp.src(appSourcesCss);
+
+    return doInject(target, jsAppSources, cssAppSources, libSources);
+});
+
 var doInject = function (target, jsAppSources, cssAppSources, libSrc) {
 
     var thirdPartyCSS = gulp.src(['./dist/lib/*.css']);
@@ -75,6 +87,5 @@ gulp.task('hint', function () {
       .pipe(jshint.reporter('fail'));
 });
 
-gulp.task('default', ['debugIndex'], function () { });
-
-gulp.task('dev', ['hint','debugIndex'], function () { });
+gulp.task('dev', ['hint', 'debugIndex'], function () { });
+gulp.task('server', ['hint', 'serverIndex'], function () { });

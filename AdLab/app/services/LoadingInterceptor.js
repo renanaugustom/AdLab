@@ -2,7 +2,6 @@
     "use strict";
 
     angular.module('app.services').service('LoadingInterceptor', LoadingInterceptor);
-    LoadingInterceptor.$inject = ['$q', '$rootScope', '$log'];
 
     function LoadingInterceptor($q, $rootScope, $log) {
 
