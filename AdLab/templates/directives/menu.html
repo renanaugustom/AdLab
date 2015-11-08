@@ -1,0 +1,32 @@
+﻿<nav class="navbar navbar-default navbar-static-top">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#"><img style="width:120px; height:40px; margin-top:-10px" src="../../Images/Menu.jpg" /></a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+            <li class="dropdown" ng-repeat="item in menus.itens">
+                <a ng-if="!item.submenu" href="{{item.link}}">{{item.text}} </a>
+                <a ng-if="item.submenu" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{item.text}} <span class="caret"></span></a>
+                <ul ng-if="item.submenu" class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+                    <li ng-repeat="submenu in item.submenu" style="padding:4px"><a href="{{submenu.link}}">{{submenu.text}}</a></li>
+                </ul>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right" style="margin-right:10px">
+            <li class="dropdown" ng-repeat="opcao in menus.opcoes">
+                <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{opcao.text}}<span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+                    <li ng-repeat="submenu in opcao.submenu" style="padding:4px"><a href="{{submenu.link}}" ng-click="submenu.action()">{{submenu.text}}</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div><!--/.nav-collapse -->
+</nav>
+
+

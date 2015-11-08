@@ -1,9 +1,9 @@
 ﻿(function () {
     "use strict";
 
-    angular.module('app.directives').directive('loader', LoadingDirective);
+    angular.module('app.directives').directive('loader', loadingDirective);
 
-    function LoadingDirective($rootScope) {
+    function loadingDirective($rootScope) {
         return function ($scope, element, attrs) {
             $scope.$on("loader_show", function () {
                 $scope.showEl = true;

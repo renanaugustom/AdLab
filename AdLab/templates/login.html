@@ -9,13 +9,20 @@
                         <img class="profile-img" alt="Logo" src="images/logo.png" />
                         <form class="form-signin" ng-submit="doLogin(User)">
                             <div class="row">
-                                <input type="text" class="form-control" placeholder="User" required autofocus ng-model="User.user">
+                                <input type="text" class="form-control" placeholder="Usuário" required autofocus ng-model="User.user">
                             </div>
                             <div class="row">
-                                <input type="password" class="form-control" placeholder="Password" required ng-model="User.password">
+                                <input type="password" class="form-control" placeholder="Senha" required ng-model="User.password">
                             </div>
                             <div class="row">
-                                <input type="submit" class="btn btn-lg btn-primary btn-block" value="Enter" />
+                                <div class="col-xs-8">
+                                    <a href="#">Novo usuário? Registre-se</a>
+                                </div>
+                                <div class="col-xs-4">
+                                    <button type="submit" class="btn btn-success" btn-block>
+                                        <span class="glyphicon glyphicon-hand-right"></span> Entrar
+                                    </button>
+                                </div>
                             </div>
                         </form>
                     </div>

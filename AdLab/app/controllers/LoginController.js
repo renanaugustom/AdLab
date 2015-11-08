@@ -1,9 +1,9 @@
 ﻿(function () {
     "use strict";
 
-    angular.module('app.controllers').controller('LoginCtrl', LoginCtrl);
+    angular.module('app.controllers').controller('loginCtrl', loginCtrl);
 
-    function LoginCtrl($scope, $rootScope, $state, LoginService, UserService, AlertService) {
+    function loginCtrl($scope, $rootScope, $state, LoginService, UserService, AlertService) {
         $scope.User = {};
 
         $scope.setOnLoginScreen(true);

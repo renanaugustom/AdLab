@@ -5,19 +5,19 @@ routes.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider,
         .state('login', {
             url: '/login',
             templateUrl: 'templates/login.html',
-            controller: 'LoginCtrl',
+            controller: 'loginCtrl',
             controllerAs: 'login'
         })
         .state('home', {
             url: '/home',
             templateUrl: 'templates/home.html',
-            controller: 'HomeController',
+            controller: 'homeController',
             controllerAs: 'home'
         })
         .state('accessdenied', {
             url: '/accessdenied',
             templateUrl: 'templates/accessDenied.html',
-            controller: 'AccessDeniedController',
+            controller: 'accessDeniedController',
             controllerAs: 'accessdenied'
         });
 

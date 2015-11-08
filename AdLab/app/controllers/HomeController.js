@@ -1,9 +1,9 @@
 ﻿(function () {
     "use strict";
 
-    angular.module('app.controllers').controller('HomeController', HomeController);
+    angular.module('app.controllers').controller('homeController', homeController);
 
-    function HomeController($scope) {
+    function homeController($scope) {
         $scope.setOnLoginScreen(false);
     }
 })();

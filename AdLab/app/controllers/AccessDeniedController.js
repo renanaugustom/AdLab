@@ -1,9 +1,9 @@
 ﻿(function () {
     "use strict";
 
-    angular.module('app.controllers').controller('AccessDeniedController', AccessDeniedController);
+    angular.module('app.controllers').controller('accessDeniedController', accessDeniedController);
 
-    function AccessDeniedController($rootScope, $state) {
+    function accessDeniedController($rootScope, $state) {
 
         function load()
         {

@@ -14,15 +14,9 @@
 </head>
 <body ng-controller="IndexController as index" ng-cloak>
 
-    <nav class="navbar navbar-default" ng-if="index.currentUser && !onLoginScreen">
-        <ul class="nav navbar-nav navbar-right" style="margin-right:10px">
-            <li>
-                <button class="btn btn-default navbar-btn" ng-click="index.logout()">
-                    Logout <strong>{{index.currentUser.user}}</strong>
-                </button>
-            </li>
-        </ul>
-    </nav>
+    <div ng-controller="menuController" ng-if="index.currentUser && !onLoginScreen">
+        <menu menus='menus'></menu>
+    </div>
 
     <div id="loaderDiv" ng-show="showEl" loader>
         <img  src="images/load.gif" class="ajax-loader" />
@@ -50,18 +44,33 @@
     <!-- endinject -->
 
     <!-- inject:js -->
+
     <script src="app/app.js"></script>
+
     <script src="app/base/routes.js"></script>
+
     <script src="app/services/AlertService.js"></script>
+
     <script src="app/services/APIInteceptor.js"></script>
+
     <script src="app/services/LoadingInterceptor.js"></script>
+
     <script src="app/services/LoginService.js"></script>
+
     <script src="app/services/UserService.js"></script>
-    <script src="app/controllers/AccessDeniedController.js"></script>
-    <script src="app/controllers/HomeController.js"></script>
+
+    <script src="app/controllers/accessDeniedController.js"></script>
+
+    <script src="app/controllers/homeController.js"></script>
+
     <script src="app/controllers/indexController.js"></script>
-    <script src="app/controllers/LoginController.js"></script>
-    <script src="app/directives/LoadingDirective.js"></script>
+
+    <script src="app/controllers/loginController.js"></script>
+
+    <script src="app/directives/loadingDirective.js"></script>
+
+    <script src="app/directives/menuDirective.js"></script>
+
     <!-- endinject -->
 </body>
 </html>

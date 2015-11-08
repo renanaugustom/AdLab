@@ -3,7 +3,7 @@
 
     angular.module('app.controllers').controller('IndexController', IndexController);
 
-    function IndexController($rootScope, $state, LoginService, UserService) {
+    function IndexController($rootScope, $state, UserService) {
        
         var index = this;
 

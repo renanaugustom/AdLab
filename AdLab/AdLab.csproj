@@ -67,16 +67,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\base\routes.js" />
-    <Content Include="app\controllers\AccessDeniedController.js" />
-    <Content Include="app\controllers\HomeController.js" />
+    <Content Include="app\controllers\accessDeniedController.js" />
+    <Content Include="app\controllers\homeController.js" />
     <Content Include="app\controllers\indexController.js" />
-    <Content Include="app\controllers\LoginController.js" />
-    <Content Include="app\directives\LoadingDirective.js" />
-    <Content Include="app\services\AlertService.js" />
+    <Content Include="app\controllers\loginController.js" />
+    <Content Include="app\directives\loadingDirective.js" />
+    <Content Include="app\directives\menuDirective.js" />
+    <Content Include="app\services\alertService.js" />
     <Content Include="app\services\APIInteceptor.js" />
-    <Content Include="app\services\LoadingInterceptor.js" />
-    <Content Include="app\services\LoginService.js" />
-    <Content Include="app\services\UserService.js" />
+    <Content Include="app\services\loadingInterceptor.js" />
+    <Content Include="app\services\loginService.js" />
+    <Content Include="app\services\userService.js" />
     <Content Include="content\custom.css" />
     <Content Include="content\login.css" />
     <Content Include="images\load.gif" />
@@ -95,6 +96,7 @@
     <Content Include="gulpfile.js" />
     <Content Include="index.html" />
     <Content Include="templates\accessDenied.html" />
+    <Content Include="templates\directives\menu.html" />
     <Content Include="templates\home.html" />
     <Content Include="templates\login.html" />
     <Content Include="Web.config" />
