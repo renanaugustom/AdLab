@@ -3,8 +3,8 @@ using Repository.Common;
 
 namespace Repository.Usuarios
 {
-    public interface IUsuarioRepository : IGenericRepository<Domain.Models.Usuario>
+    public interface IUsuarioRepository : IGenericRepository<Usuario>
     {
-        Usuario GetByNameAndPassword(string name, string password);
+        Usuario GetByLoginAndSenha(string login, string senha);
     }
 }

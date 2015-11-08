@@ -39,10 +39,10 @@ namespace API
                 var userName = context.UserName;
                 var password = context.Password;
 
-                //var user = _userRepository.GetByNameAndPassword(userName, password);
+                var user = _userRepository.GetByLoginAndSenha(userName, password);
 
                 //Use your logic here to validate user
-                if(userName != "renan" || password != "renan")
+                if(user == null)
                 {
                     context.SetError("invalid_grant", "Usuário ou senha inválidos");
                     return;
