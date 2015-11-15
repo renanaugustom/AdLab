@@ -1,28 +1,44 @@
-﻿
+﻿using Domain.DTO.Usuario;
 using Domain.Models;
-using Repository.Usuarios;
-using Service.Common;
+using Domain.Resources;
+using Repository.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Service.Usuarios
 {
-    public class UsuarioService : EntityService<Usuario>, IUsuarioService
+    public class UsuarioService : IUsuarioService
     {
-        IUsuarioRepository _usuarioRepository;
+        IUnitOfWork _unitOfWork;
 
-        public UsuarioService(IUsuarioRepository usuarioRepository)
-            : base(usuarioRepository)
+        public UsuarioService(IUnitOfWork unitOfWork)
         {
-            _usuarioRepository = usuarioRepository;
+            _unitOfWork = unitOfWork;
         }
 
-        public List<Usuario> teste ()
+        public void CriarUsuario(UsuarioPostDTO usuario)
         {
-            return _usuarioRepository.GetAll().ToList();
+            var usuarioExistente = BuscaPeloLogin(usuario.Login);
+            if (usuarioExistente != null)
+                throw new Exception(Messages.UsuarioJaExiste);
+
+            Usuario novoUsuario = new Usuario(usuario.Login, usuario.Email, usuario.Senha);
+            novoUsuario.Valida();
+            novoUsuario.EncriptaSenha();
+
+            _unitOfWork.UsuarioRepository.Add(novoUsuario);
+            _unitOfWork.Commit();
+        }
+
+        public List<Usuario> ListarTodosUsuarios ()
+        {
+            return _unitOfWork.UsuarioRepository.GetAll().ToList();
+        }
+
+        public Usuario BuscaPeloLogin(string login)
+        {
+            return _unitOfWork.UsuarioRepository.BuscaPeloLogin(login);
         }
     }
 }

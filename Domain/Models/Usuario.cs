@@ -3,6 +3,7 @@ namespace Domain.Models
     using Validation;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
+    using Resources;
 
     [Table("Usuario")]
     public partial class Usuario
@@ -22,22 +23,25 @@ namespace Domain.Models
         [StringLength(100)]
         public string Email { get; set; }
 
-
         protected Usuario() { }
 
         public Usuario(string _login, string _email, string _senha)
         {
             login = _login;
             Email = _email;
-            Senha = PasswordAssertionConcern.Encrypt(_senha);
+            Senha = _senha;
         }
 
-        public Usuario Create(string _login, string _senha, string _email)
+        public void Valida()
         {
-            EmailAssertionConcern.AssertIsValid(_email);
+            AssertionConcern.AssertArgumentLength(this.login, 3, 100, Messages.LoginInvalido);
+            EmailAssertionConcern.AssertIsValid(this.Email);
             PasswordAssertionConcern.AssertIsValid(this.Senha);
+        }
 
-            return new Usuario(_login, _senha, _email);
+        public void EncriptaSenha()
+        {
+            this.Senha = PasswordAssertionConcern.Encrypt(this.Senha);
         }
     }
 }

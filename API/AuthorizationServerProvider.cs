@@ -39,7 +39,7 @@ namespace API
                 var userName = context.UserName;
                 var password = context.Password;
 
-                var user = _userRepository.GetByLoginAndSenha(userName, password);
+                var user = _userRepository.BuscaPeloLoginESenha(userName, password);
 
                 //Use your logic here to validate user
                 if(user == null)

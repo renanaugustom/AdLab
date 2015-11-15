@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Domain.Models;
+using Repository.Usuarios;
+using System;
 using System.Data.Entity;
 
 namespace Repository.Common
@@ -7,9 +9,25 @@ namespace Repository.Common
     {
         private DbContext _dbContext;
 
+        private IUsuarioRepository usuarioRepository;
+
+
         public UnitOfWork(DbContext context)
         {
             _dbContext = context;
+        }
+
+        public IUsuarioRepository UsuarioRepository
+        {
+            get
+            {
+
+                if (this.usuarioRepository == null)
+                {
+                    this.usuarioRepository = new UsuarioRepository(_dbContext);
+                }
+                return usuarioRepository;
+            }
         }
 
         public int Commit()

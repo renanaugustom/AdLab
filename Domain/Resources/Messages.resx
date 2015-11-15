@@ -120,10 +120,16 @@
   <data name="EmailInvalido" xml:space="preserve">
     <value>E-mail inválido.</value>
   </data>
+  <data name="LoginInvalido" xml:space="preserve">
+    <value>Login deve possuir de 3 a 100 caracteres</value>
+  </data>
   <data name="SenhaTamanhoInválido" xml:space="preserve">
     <value>Senha deve possuir de 6 a 30 caracteres.</value>
   </data>
   <data name="SenhaVazia" xml:space="preserve">
     <value>Senha não pode ser vazia.</value>
+  </data>
+  <data name="UsuarioJaExiste" xml:space="preserve">
+    <value>Já existe um usuário com este login.</value>
   </data>
 </root>

@@ -13,9 +13,19 @@ namespace Repository.Usuarios
 
         }
 
-        public Usuario GetByLoginAndSenha(string login, string senha)
+        public Usuario BuscaPeloLoginESenha(string login, string senha)
         {
-            return _dbset.SingleOrDefault(x => x.login == login && x.Senha == senha);
+            return _dbset.AsNoTracking().SingleOrDefault(x => x.login == login && x.Senha == senha);
+        }
+
+        /// <summary>
+        /// Busca um usuário pelo login.
+        /// </summary>
+        /// <param name="login"></param>
+        /// <returns></returns>
+        public Usuario BuscaPeloLogin(string login)
+        {
+            return _dbset.AsNoTracking().SingleOrDefault(x => x.login == login);
         }
     }
 }

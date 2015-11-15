@@ -70,6 +70,15 @@ namespace Domain.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Login deve possuir de 3 a 100 caracteres.
+        /// </summary>
+        public static string LoginInvalido {
+            get {
+                return ResourceManager.GetString("LoginInvalido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Senha deve possuir de 6 a 30 caracteres..
         /// </summary>
         public static string SenhaTamanhoInválido {
@@ -84,6 +93,15 @@ namespace Domain.Resources {
         public static string SenhaVazia {
             get {
                 return ResourceManager.GetString("SenhaVazia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Já existe um usuário com este login..
+        /// </summary>
+        public static string UsuarioJaExiste {
+            get {
+                return ResourceManager.GetString("UsuarioJaExiste", resourceCulture);
             }
         }
     }

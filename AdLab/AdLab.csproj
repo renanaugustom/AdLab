@@ -80,6 +80,7 @@
     <Content Include="app\services\userService.js" />
     <Content Include="content\custom.css" />
     <Content Include="content\login.css" />
+    <Content Include="images\logo.png" />
     <Content Include="images\load.gif" />
     <Content Include="packages.config" />
     <Content Include="bower.json" />
