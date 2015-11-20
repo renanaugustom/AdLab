@@ -118,13 +118,16 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="DadosInvalidos" xml:space="preserve">
-    <value>Dados recebidos são inválidos</value>
+    <value>Dados recebidos são inválidos.</value>
   </data>
   <data name="EmailInvalido" xml:space="preserve">
     <value>E-mail inválido.</value>
   </data>
   <data name="LoginInvalido" xml:space="preserve">
-    <value>Login deve possuir de 3 a 100 caracteres</value>
+    <value>Login deve possuir de 3 a 100 caracteres.</value>
+  </data>
+  <data name="NomeInvalido" xml:space="preserve">
+    <value>Nome deve possuir de 3 a 150 caracteres.</value>
   </data>
   <data name="SenhaAlterada" xml:space="preserve">
     <value>Senha alterada com sucesso.</value>

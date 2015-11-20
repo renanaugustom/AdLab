@@ -11,6 +11,7 @@ var appSourcesJs = [
     './app/base/*.js',
     './app/services/*.js',
     './app/controllers/*.js',
+    './app/apis/*.js',
     './app/**/*.js',
     './app/directives/*.js',
     '!app/**/*.min.js'

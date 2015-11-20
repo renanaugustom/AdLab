@@ -1,10 +1,8 @@
 namespace Domain
 {
-    using System;
     using System.Data.Entity;
-    using System.ComponentModel.DataAnnotations.Schema;
-    using System.Linq;
     using Models;
+    using Models.Map;
 
     public partial class AppContext : DbContext
     {
@@ -17,17 +15,7 @@ namespace Domain
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Usuario>()
-                .Property(e => e.Login)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Usuario>()
-                .Property(e => e.Senha)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Usuario>()
-                .Property(e => e.Email)
-                .IsUnicode(false);
+            modelBuilder.Configurations.Add(new UsuarioMap());
         }
     }
 }

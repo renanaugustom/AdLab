@@ -3,7 +3,7 @@
 
     angular.module('app.services').service('LoginService', LoginService);
 
-    function LoginService($http, AUTHENTICATONSERVER_URI) {
+    function LoginService($http, API_URI) {
 
         var service = this, tokenPath = 'security/token', path = 'User/';
         var customHeaders = {
@@ -11,7 +11,7 @@
         };
 
         function getTokenUrl() {
-            return AUTHENTICATONSERVER_URI + tokenPath;
+            return API_URI + tokenPath;
         }
 
         service.login = function (credentials) {

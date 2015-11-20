@@ -27,15 +27,15 @@ namespace API.Controllers
         }
 
         [HttpPost]
-        [Route("cadastrar")]
-        public HttpResponseMessage Post(UsuarioPostDTO usuario)
+        [Route("registrar")]
+        public HttpResponseMessage Registrar(UsuarioPostDTO usuario)
         {
             if(usuario == null)
                 return Request.CreateErrorResponse(HttpStatusCode.BadRequest, Messages.DadosInvalidos);
 
             try
             {
-                _usuarioService.CriarUsuario(usuario.Login, usuario.Email, usuario.Senha);
+                _usuarioService.CriarUsuario(usuario.Nome, usuario.Login, usuario.Email, usuario.Senha);
 
                 var resposta = _usuarioService.CreateDataResponse(null, Messages.UsuarioCadastrado);
                 return Request.CreateResponse(HttpStatusCode.OK, Messages.UsuarioCadastrado);

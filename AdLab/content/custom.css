@@ -30,3 +30,11 @@
 .well {
     border-width: 0px;
 } 
+
+input.ng-invalid.ng-dirty {
+  border: 1px solid red;
+}
+
+.error {
+    color: red;
+}

@@ -7,7 +7,7 @@ namespace Service.Usuarios
     public interface IUsuarioService: IBaseService
     {
         List<Usuario> ListarTodosUsuarios();
-        void CriarUsuario(string login, string email, string senha);
+        void CriarUsuario(string nome, string login, string email, string senha);
         Usuario BuscaPeloLogin(string login);
         void AlterarSenha(string login, string senhaAtual, string novaSenha);
     }

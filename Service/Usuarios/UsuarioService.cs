@@ -18,13 +18,13 @@ namespace Service.Usuarios
             _unitOfWork = unitOfWork;
         }
 
-        public void CriarUsuario(string login, string email, string senha)
+        public void CriarUsuario(string nome, string login, string email, string senha)
         {
             var usuarioExistente = BuscaPeloLogin(login);
             if (usuarioExistente != null)
                 throw new Exception(Messages.UsuarioJaExiste);
 
-            Usuario novoUsuario = new Usuario(login, email, senha);
+            Usuario novoUsuario = new Usuario(nome, login, email, senha);
             novoUsuario.Valida();
             novoUsuario.EncriptaSenha();
 

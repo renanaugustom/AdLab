@@ -61,7 +61,7 @@ namespace Domain.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Dados recebidos são inválidos.
+        ///   Looks up a localized string similar to Dados recebidos são inválidos..
         /// </summary>
         public static string DadosInvalidos {
             get {
@@ -79,11 +79,20 @@ namespace Domain.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Login deve possuir de 3 a 100 caracteres.
+        ///   Looks up a localized string similar to Login deve possuir de 3 a 100 caracteres..
         /// </summary>
         public static string LoginInvalido {
             get {
                 return ResourceManager.GetString("LoginInvalido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nome deve possuir de 3 a 150 caracteres..
+        /// </summary>
+        public static string NomeInvalido {
+            get {
+                return ResourceManager.GetString("NomeInvalido", resourceCulture);
             }
         }
         

@@ -66,6 +66,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\apis\usuarioAPI.js" />
     <Content Include="app\base\routes.js" />
     <Content Include="app\controllers\accessDeniedController.js" />
     <Content Include="app\controllers\homeController.js" />

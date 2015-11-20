@@ -10,7 +10,10 @@ namespace Domain.Models
     {
         public int Id { get; set; }
 
-        [Column("Usuario")]
+        [Required]
+        [StringLength(150)]
+        public string Nome { get; set; }
+
         [Required]
         [StringLength(80)]
         public string Login { get; set; }
@@ -25,8 +28,9 @@ namespace Domain.Models
 
         protected Usuario() { }
 
-        public Usuario(string _login, string _email, string _senha)
+        public Usuario(string _nome, string _login, string _email, string _senha)
         {
+            Nome = _nome;
             Login = _login;
             Email = _email;
             Senha = _senha;
@@ -34,6 +38,7 @@ namespace Domain.Models
 
         public void Valida()
         {
+            AssertionConcern.AssertArgumentLength(this.Nome, 3, 150, Messages.NomeInvalido);
             AssertionConcern.AssertArgumentLength(this.Login, 3, 100, Messages.LoginInvalido);
             EmailAssertionConcern.AssertIsValid(this.Email);
             PasswordAssertionConcern.AssertIsValid(this.Senha);

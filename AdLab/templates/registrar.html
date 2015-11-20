@@ -8,27 +8,46 @@
                     <strong>Registrar</strong>
                 </div>
                 <div class="panel-body">
-                    <form>
+                    <form name="form" novalidate>
                         <br />
-                        <div class="form-group input-group">
-                            <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                            <input type="text" class="form-control" placeholder="Nome" />
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                <input type="text" class="form-control" placeholder="Nome" name="Nome" ng-model="vm.Usuario.nome" required />
+                            </div>
+                            <small class="error" ng-show="form.Nome.$dirty && form.Nome.$invalid"> Campo obrigatório </small>
                         </div>
-                        <div class="form-group input-group">
-                            <span class="input-group-addon"><i class="fa fa-tag"></i></span>
-                            <input type="text" class="form-control" placeholder="Login" />
+
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-tag"></i></span>
+                                <input type="text" class="form-control" placeholder="Login" name="Login" ng-model="vm.Usuario.login" required />
+                            </div>
+                            <small class="error" ng-show="form.Login.$dirty && form.Login.$invalid"> Campo obrigatório </small>
                         </div>
-                        <div class="form-group input-group">
-                            <span class="input-group-addon">@</span>
-                            <input type="text" class="form-control" placeholder="E-mail" />
+
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">@</span>
+                                <input type="text" class="form-control" placeholder="E-mail" name="Email" ng-model="vm.Usuario.email" required />
+                            </div>
+                            <small class="error" ng-show="form.Email.$dirty && form.Email.$invalid"> Campo obrigatório </small>
                         </div>
-                        <div class="form-group input-group">
-                            <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                            <input type="password" class="form-control" placeholder="Senha" />
+
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                                <input type="password" class="form-control" placeholder="Senha" name="Senha" ng-model="vm.Usuario.senha" required />
+                            </div>
+                            <small class="error" ng-show="form.Senha.$dirty && form.Senha.$invalid"> Campo obrigatório </small>
                         </div>
-                        <div class="form-group input-group">
-                            <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                            <input type="password" class="form-control" placeholder="Confirmar senha" />
+
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                                <input type="password" class="form-control" placeholder="Confirmar senha" name="ConfirmarSenha" ng-model="vm.Usuario.confirmarSenha" required />
+                            </div>
+                            <small class="error" ng-show="form.ConfirmarSenha.$dirty && form.ConfirmarSenha.$invalid"> Campo obrigatório </small>
                         </div>
 
                         <hr />
@@ -38,7 +57,9 @@
                                 Já possuí cadastro?  <a href="#/login">Fazer Login</a>
                             </div>
                             <div class="col-xs-4">
-                                <a href="#" class="btn btn-success ">Registrar</a>
+                                <button class="btn btn-success" btn-block ng-click="vm.registrar(form)" ng-disabled="form.$invalid || vm.Usuario.senha != vm.Usuario.confirmarSenha">
+                                    <span class=""></span> Registrar
+                                </button>
                             </div>
                         </div>
                     </form>
@@ -47,3 +68,5 @@
         </div>
     </div>
 </div>
+
+
