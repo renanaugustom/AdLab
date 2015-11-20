@@ -27,7 +27,7 @@
                     $scope.User = {};
                 });
             } else {
-                AlertService.addWarning("Preencha os campos de senha e usuário");
+                AlertService.addWarning("Preencha os campos login e senha.");
             }
             
         };

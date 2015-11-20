@@ -20,6 +20,12 @@ routes.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider,
             controller: 'perfilController',
             controllerAs: 'perfilCtrl'
         })
+        .state('registrar', {
+            url: '/registrar',
+            templateUrl: 'templates/registrar.html',
+            controller: 'registrarController',
+            controllerAs: 'vm'
+        })
         .state('accessdenied', {
             url: '/accessdenied',
             templateUrl: 'templates/accessDenied.html',
@@ -36,7 +42,7 @@ routes.run(function ($rootScope, $state, UserService, AlertService) {
     $rootScope.$on('$stateChangeStart', function (event, next, nextParams, fromState) {
         AlertService.cleanAlerts();
         if (!UserService.isAuthenticated()) {
-            if (next.name !== 'login' && next.name !== 'accessdenied') {
+            if (next.name !== 'login' && next.name !== 'accessdenied' && next.name !== 'registrar') {
                 event.preventDefault();
                 $state.go('accessdenied');
             }

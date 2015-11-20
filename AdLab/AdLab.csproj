@@ -71,6 +71,7 @@
     <Content Include="app\controllers\homeController.js" />
     <Content Include="app\controllers\indexController.js" />
     <Content Include="app\controllers\loginController.js" />
+    <Content Include="app\controllers\registrarController.js" />
     <Content Include="app\controllers\usuario\perfilController.js" />
     <Content Include="app\directives\loadingDirective.js" />
     <Content Include="app\directives\menuDirective.js" />
@@ -101,6 +102,7 @@
     <Content Include="templates\directives\menu.html" />
     <Content Include="templates\home.html" />
     <Content Include="templates\login.html" />
+    <Content Include="templates\registrar.html" />
     <Content Include="templates\usuario\perfil.html" />
     <Content Include="Web.config" />
   </ItemGroup>

@@ -1,4 +1,8 @@
-﻿#loaderDiv {
+﻿body{
+    background-color:#339054;
+}
+
+#loaderDiv {
    position: fixed;
    top: 0;
    right: 0;
