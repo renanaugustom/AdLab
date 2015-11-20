@@ -117,11 +117,20 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="DadosInvalidos" xml:space="preserve">
+    <value>Dados recebidos são inválidos</value>
+  </data>
   <data name="EmailInvalido" xml:space="preserve">
     <value>E-mail inválido.</value>
   </data>
   <data name="LoginInvalido" xml:space="preserve">
     <value>Login deve possuir de 3 a 100 caracteres</value>
+  </data>
+  <data name="SenhaAlterada" xml:space="preserve">
+    <value>Senha alterada com sucesso.</value>
+  </data>
+  <data name="SenhaAtualInvalida" xml:space="preserve">
+    <value>Senha atual incorreta.</value>
   </data>
   <data name="SenhaTamanhoInválido" xml:space="preserve">
     <value>Senha deve possuir de 6 a 30 caracteres.</value>
@@ -129,7 +138,13 @@
   <data name="SenhaVazia" xml:space="preserve">
     <value>Senha não pode ser vazia.</value>
   </data>
+  <data name="UsuarioCadastrado" xml:space="preserve">
+    <value>Usuário cadastrado com sucesso.</value>
+  </data>
   <data name="UsuarioJaExiste" xml:space="preserve">
     <value>Já existe um usuário com este login.</value>
+  </data>
+  <data name="UsuarioNaoEncontrado" xml:space="preserve">
+    <value>Usuário não encontrado.</value>
   </data>
 </root>

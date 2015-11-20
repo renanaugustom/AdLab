@@ -1,14 +1,14 @@
 ﻿using Domain.Models;
-using System;
+using Service.Common;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Service.Usuarios
 {
-    public interface IUsuarioService
+    public interface IUsuarioService: IBaseService
     {
-        List<Usuario> teste();
+        List<Usuario> ListarTodosUsuarios();
+        void CriarUsuario(string login, string email, string senha);
+        Usuario BuscaPeloLogin(string login);
+        void AlterarSenha(string login, string senhaAtual, string novaSenha);
     }
 }

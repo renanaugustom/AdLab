@@ -13,7 +13,7 @@ namespace Domain.Models
         [Column("Usuario")]
         [Required]
         [StringLength(80)]
-        public string login { get; set; }
+        public string Login { get; set; }
 
         [Required]
         [StringLength(100)]
@@ -27,14 +27,14 @@ namespace Domain.Models
 
         public Usuario(string _login, string _email, string _senha)
         {
-            login = _login;
+            Login = _login;
             Email = _email;
             Senha = _senha;
         }
 
         public void Valida()
         {
-            AssertionConcern.AssertArgumentLength(this.login, 3, 100, Messages.LoginInvalido);
+            AssertionConcern.AssertArgumentLength(this.Login, 3, 100, Messages.LoginInvalido);
             EmailAssertionConcern.AssertIsValid(this.Email);
             PasswordAssertionConcern.AssertIsValid(this.Senha);
         }
@@ -42,6 +42,13 @@ namespace Domain.Models
         public void EncriptaSenha()
         {
             this.Senha = PasswordAssertionConcern.Encrypt(this.Senha);
+        }
+
+        public void AlteraSenha(string senhaAtual, string novaSenha)
+        {
+            AssertionConcern.AssertArgumentEquals(this.Senha, senhaAtual, Messages.SenhaAtualInvalida);
+            PasswordAssertionConcern.AssertIsValid(novaSenha);
+            this.Senha = PasswordAssertionConcern.Encrypt(novaSenha);
         }
     }
 }

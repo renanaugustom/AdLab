@@ -61,6 +61,15 @@ namespace Domain.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Dados recebidos são inválidos.
+        /// </summary>
+        public static string DadosInvalidos {
+            get {
+                return ResourceManager.GetString("DadosInvalidos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to E-mail inválido..
         /// </summary>
         public static string EmailInvalido {
@@ -75,6 +84,24 @@ namespace Domain.Resources {
         public static string LoginInvalido {
             get {
                 return ResourceManager.GetString("LoginInvalido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Senha alterada com sucesso..
+        /// </summary>
+        public static string SenhaAlterada {
+            get {
+                return ResourceManager.GetString("SenhaAlterada", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Senha atual incorreta..
+        /// </summary>
+        public static string SenhaAtualInvalida {
+            get {
+                return ResourceManager.GetString("SenhaAtualInvalida", resourceCulture);
             }
         }
         
@@ -97,11 +124,29 @@ namespace Domain.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Usuário cadastrado com sucesso..
+        /// </summary>
+        public static string UsuarioCadastrado {
+            get {
+                return ResourceManager.GetString("UsuarioCadastrado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Já existe um usuário com este login..
         /// </summary>
         public static string UsuarioJaExiste {
             get {
                 return ResourceManager.GetString("UsuarioJaExiste", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Usuário não encontrado..
+        /// </summary>
+        public static string UsuarioNaoEncontrado {
+            get {
+                return ResourceManager.GetString("UsuarioNaoEncontrado", resourceCulture);
             }
         }
     }

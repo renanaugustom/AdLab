@@ -7,7 +7,7 @@
                 <div id="my-tab-content" class="tab-content">
                     <div class="tab-pane active" id="login">
                         <img class="profile-img" alt="Logo" src="images/logo.png" />
-                        <form class="form-signin" ng-submit="doLogin(User)">
+                        <form class="form-signin" ng-submit="doLogin(User)" novalidate>
                             <div class="row">
                                 <input type="text" class="form-control" placeholder="Usuário" required autofocus ng-model="User.user">
                             </div>

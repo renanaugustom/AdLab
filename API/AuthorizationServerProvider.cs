@@ -1,4 +1,5 @@
-﻿using Microsoft.Owin.Security.OAuth;
+﻿using Domain.Validation;
+using Microsoft.Owin.Security.OAuth;
 using Repository.Usuarios;
 using System;
 using System.Collections.Generic;
@@ -37,7 +38,7 @@ namespace API
             try
             {
                 var userName = context.UserName;
-                var password = context.Password;
+                var password = PasswordAssertionConcern.Encrypt(context.Password);
 
                 var user = _userRepository.BuscaPeloLoginESenha(userName, password);
 

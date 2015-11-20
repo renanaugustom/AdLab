@@ -18,7 +18,7 @@ namespace Domain
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Usuario>()
-                .Property(e => e.login)
+                .Property(e => e.Login)
                 .IsUnicode(false);
 
             modelBuilder.Entity<Usuario>()

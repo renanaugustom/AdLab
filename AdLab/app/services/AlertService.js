@@ -23,6 +23,17 @@
             $rootScope.alerts.push({ msg: mensagem, type: 'danger'});
         };
 
+        alertService.addWarning = function (mensagem) {
+            var alert = { msg: mensagem, type: 'warning' };
+            $rootScope.alerts.push(alert);
+            $timeout(function () {
+                var index = $rootScope.alerts.indexOf(alert);
+                if (index != -1) {
+                    $rootScope.alerts.splice(index, 1);
+                }
+            }, 3000);
+        };
+
         alertService.closeAlert = function (index) {
             $rootScope.alerts.splice(index, 1);
         };

@@ -14,6 +14,12 @@ routes.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider,
             controller: 'homeController',
             controllerAs: 'home'
         })
+        .state('perfil', {
+            url: '/perfil',
+            templateUrl: 'templates/usuario/perfil.html',
+            controller: 'perfilController',
+            controllerAs: 'perfilCtrl'
+        })
         .state('accessdenied', {
             url: '/accessdenied',
             templateUrl: 'templates/accessDenied.html',

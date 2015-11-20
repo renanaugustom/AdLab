@@ -2,13 +2,14 @@
 using Domain.Models;
 using Domain.Resources;
 using Repository.Common;
+using Service.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace Service.Usuarios
 {
-    public class UsuarioService : IUsuarioService
+    public class UsuarioService : BaseService, IBaseService, IUsuarioService
     {
         IUnitOfWork _unitOfWork;
 
@@ -17,13 +18,13 @@ namespace Service.Usuarios
             _unitOfWork = unitOfWork;
         }
 
-        public void CriarUsuario(UsuarioPostDTO usuario)
+        public void CriarUsuario(string login, string email, string senha)
         {
-            var usuarioExistente = BuscaPeloLogin(usuario.Login);
+            var usuarioExistente = BuscaPeloLogin(login);
             if (usuarioExistente != null)
                 throw new Exception(Messages.UsuarioJaExiste);
 
-            Usuario novoUsuario = new Usuario(usuario.Login, usuario.Email, usuario.Senha);
+            Usuario novoUsuario = new Usuario(login, email, senha);
             novoUsuario.Valida();
             novoUsuario.EncriptaSenha();
 
@@ -34,6 +35,19 @@ namespace Service.Usuarios
         public List<Usuario> ListarTodosUsuarios ()
         {
             return _unitOfWork.UsuarioRepository.GetAll().ToList();
+        }
+
+        public void AlterarSenha(string login, string senhaAtual, string novaSenha)
+        {
+            Usuario usuario = BuscaPeloLogin(login);
+
+            if(usuario == null)
+                throw new Exception(Messages.UsuarioNaoEncontrado);
+
+            usuario.AlteraSenha(senhaAtual, novaSenha);
+
+            _unitOfWork.UsuarioRepository.Edit(usuario);
+            _unitOfWork.Commit();
         }
 
         public Usuario BuscaPeloLogin(string login)

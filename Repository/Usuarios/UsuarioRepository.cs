@@ -15,7 +15,7 @@ namespace Repository.Usuarios
 
         public Usuario BuscaPeloLoginESenha(string login, string senha)
         {
-            return _dbset.AsNoTracking().SingleOrDefault(x => x.login == login && x.Senha == senha);
+            return _dbset.AsNoTracking().SingleOrDefault(x => x.Login == login && x.Senha == senha);
         }
 
         /// <summary>
@@ -25,7 +25,7 @@ namespace Repository.Usuarios
         /// <returns></returns>
         public Usuario BuscaPeloLogin(string login)
         {
-            return _dbset.AsNoTracking().SingleOrDefault(x => x.login == login);
+            return _dbset.SingleOrDefault(x => x.Login == login);
         }
     }
 }

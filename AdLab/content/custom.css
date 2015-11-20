@@ -17,3 +17,12 @@
    margin-top: -32px; /* -1 * image height / 2 */
    display: block;
 }
+
+.form label {
+    font-size: 14px;
+    font-weight: unset;
+}
+
+.well {
+    border-width: 0px;
+} 

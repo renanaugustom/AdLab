@@ -49,6 +49,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppContext.cs" />
+    <Compile Include="DTO\Common\RespostaHttpDTO.cs" />
+    <Compile Include="DTO\Usuario\UsuarioAtualizaSenhaDTO.cs" />
     <Compile Include="DTO\Usuario\UsuarioPostDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\Usuario.cs" />
