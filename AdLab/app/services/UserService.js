@@ -10,6 +10,10 @@
 
         service.setCurrentUser = function (user) {
             currentUser = user;
+
+            if(user != null)
+                delete user['password'];
+
             store.set('user', user);
             return currentUser;
         };

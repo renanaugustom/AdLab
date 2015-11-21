@@ -47,7 +47,7 @@
                     link: "",
                     text: nomeUsuario,
                     submenu: [
-                        { link: "#", text: "Perfil" },
+                        { link: "#/perfil", text: "Perfil" },
                         { link: "", text: "Logout", action: logout },
                     ]
                 }

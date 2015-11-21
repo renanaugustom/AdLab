@@ -1,5 +1,5 @@
 ﻿body{
-    background-color:#339054;
+    background-color:#fff;
 }
 
 #loaderDiv {
@@ -24,7 +24,8 @@
 
 .form label {
     font-size: 14px;
-    font-weight: unset;
+    
+    color: #339054;
 }
 
 .well {
@@ -37,4 +38,9 @@ input.ng-invalid.ng-dirty {
 
 .error {
     color: red;
+}
+
+h2 {
+    color: #339054;
+    border-color: #339054;
 }
