@@ -18,7 +18,7 @@ routes.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider,
             url: '/perfil',
             templateUrl: 'templates/usuario/perfil.html',
             controller: 'perfilController',
-            controllerAs: 'perfilCtrl'
+            controllerAs: 'vc'
         })
         .state('registrar', {
             url: '/registrar',

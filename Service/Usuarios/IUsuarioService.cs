@@ -8,7 +8,7 @@ namespace Service.Usuarios
     {
         List<Usuario> ListarTodosUsuarios();
         void CriarUsuario(string nome, string login, string email, string senha);
-        Usuario BuscaPeloLogin(string login);
-        void AlterarSenha(string login, string senhaAtual, string novaSenha);
+        Usuario BuscarPeloLogin(string login);
+        void AlterarUsuario(string login, string nome, string email, bool alterarSenha, string senha, string confirmarSenha);
     }
 }

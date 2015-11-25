@@ -33,8 +33,8 @@
                     link: "",
                     text: "Gerenciar",
                     submenu: [
-                        { link: "#", text: "Equipamentos" },
-                        { link: "#", text: "Usuários" }
+                        { link: "#", text: "Equipamentos", iconClass: "fa fa-desktop" },
+                        { link: "#", text: "Usuários", iconClass: "fa fa-users" }
                     ]
                 },
                 {
@@ -47,8 +47,8 @@
                     link: "",
                     text: nomeUsuario,
                     submenu: [
-                        { link: "#/perfil", text: "Perfil" },
-                        { link: "", text: "Logout", action: logout },
+                        { link: "#/perfil", text: "Perfil", iconClass: "fa fa-user" },
+                        { link: "", text: "Logout", action: logout, iconClass:"fa fa-sign-out" },
                     ]
                 }
             ]

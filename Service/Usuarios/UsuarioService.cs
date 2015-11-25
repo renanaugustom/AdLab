@@ -20,7 +20,7 @@ namespace Service.Usuarios
 
         public void CriarUsuario(string nome, string login, string email, string senha)
         {
-            var usuarioExistente = BuscaPeloLogin(login);
+            var usuarioExistente = BuscarPeloLogin(login);
             if (usuarioExistente != null)
                 throw new Exception(Messages.UsuarioJaExiste);
 
@@ -37,22 +37,25 @@ namespace Service.Usuarios
             return _unitOfWork.UsuarioRepository.GetAll().ToList();
         }
 
-        public void AlterarSenha(string login, string senhaAtual, string novaSenha)
+        public Usuario BuscarPeloLogin(string login)
         {
-            Usuario usuario = BuscaPeloLogin(login);
+            return _unitOfWork.UsuarioRepository.BuscaPeloLogin(login);
+        }
 
-            if(usuario == null)
+        public void AlterarUsuario(string login, string nome, string email, bool alterarSenha, string senha, string confirmarSenha)
+        {
+            Usuario usuario = BuscarPeloLogin(login);
+
+            if (usuario == null)
                 throw new Exception(Messages.UsuarioNaoEncontrado);
 
-            usuario.AlteraSenha(senhaAtual, novaSenha);
+            usuario.Atualiza(nome, email);
+
+            if (alterarSenha)
+                usuario.AlteraSenha(senha, confirmarSenha);
 
             _unitOfWork.UsuarioRepository.Edit(usuario);
             _unitOfWork.Commit();
-        }
-
-        public Usuario BuscaPeloLogin(string login)
-        {
-            return _unitOfWork.UsuarioRepository.BuscaPeloLogin(login);
         }
     }
 }

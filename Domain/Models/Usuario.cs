@@ -44,16 +44,22 @@ namespace Domain.Models
             PasswordAssertionConcern.AssertIsValid(this.Senha);
         }
 
+        public void Atualiza(string _nome, string _email)
+        {
+            this.Nome = _nome;
+            this.Email = _email;
+        }
+
         public void EncriptaSenha()
         {
             this.Senha = PasswordAssertionConcern.Encrypt(this.Senha);
         }
 
-        public void AlteraSenha(string senhaAtual, string novaSenha)
+        public void AlteraSenha(string senha, string confirmarSenha)
         {
-            AssertionConcern.AssertArgumentEquals(this.Senha, senhaAtual, Messages.SenhaAtualInvalida);
-            PasswordAssertionConcern.AssertIsValid(novaSenha);
-            this.Senha = PasswordAssertionConcern.Encrypt(novaSenha);
+            AssertionConcern.AssertArgumentEquals(senha, confirmarSenha, Messages.SenhaConfirmarSenhaInvalida);
+            PasswordAssertionConcern.AssertIsValid(senha);
+            this.Senha = PasswordAssertionConcern.Encrypt(senha);
         }
     }
 }

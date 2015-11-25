@@ -6,7 +6,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#"><img style="width:120px; height:40px; margin-top:-10px" src="../../Images/Menu.jpg" /></a>
+        <a class="navbar-brand" href="#/home"><img style="width:80px; height:40px; margin-top:-10px" src="../../images/menu.png" /></a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
@@ -14,7 +14,7 @@
                 <a ng-if="!item.submenu" href="{{item.link}}">{{item.text}} </a>
                 <a ng-if="item.submenu" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{item.text}} <span class="caret"></span></a>
                 <ul ng-if="item.submenu" class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
-                    <li ng-repeat="submenu in item.submenu" style="padding:4px"><a href="{{submenu.link}}">{{submenu.text}}</a></li>
+                    <li ng-repeat="submenu in item.submenu" style="padding:4px"><a href="{{submenu.link}}"><span class="{{submenu.iconClass}}"></span>  {{submenu.text}}</a></li>
                 </ul>
             </li>
         </ul>
@@ -22,7 +22,7 @@
             <li class="dropdown" ng-repeat="opcao in menus.opcoes">
                 <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{opcao.text}}<span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
-                    <li ng-repeat="submenu in opcao.submenu" style="padding:4px"><a href="{{submenu.link}}" ng-click="submenu.action()">{{submenu.text}}</a></li>
+                    <li ng-repeat="submenu in opcao.submenu" style="padding:4px"><a href="{{submenu.link}}" ng-click="submenu.action()"><span class="{{submenu.iconClass}}"></span>  {{submenu.text}}</a></li>
                 </ul>
             </li>
         </ul>

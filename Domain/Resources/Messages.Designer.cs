@@ -106,20 +106,20 @@ namespace Domain.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Senha atual incorreta..
+        ///   Looks up a localized string similar to Senha e confirmar senha devem ser iguais..
         /// </summary>
-        public static string SenhaAtualInvalida {
+        public static string SenhaConfirmarSenhaInvalida {
             get {
-                return ResourceManager.GetString("SenhaAtualInvalida", resourceCulture);
+                return ResourceManager.GetString("SenhaConfirmarSenhaInvalida", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Senha deve possuir de 6 a 30 caracteres..
         /// </summary>
-        public static string SenhaTamanhoInválido {
+        public static string SenhaTamanhoInvalido {
             get {
-                return ResourceManager.GetString("SenhaTamanhoInválido", resourceCulture);
+                return ResourceManager.GetString("SenhaTamanhoInvalido", resourceCulture);
             }
         }
         
@@ -129,6 +129,15 @@ namespace Domain.Resources {
         public static string SenhaVazia {
             get {
                 return ResourceManager.GetString("SenhaVazia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Usuário atualizado com sucesso..
+        /// </summary>
+        public static string UsuarioAtualizado {
+            get {
+                return ResourceManager.GetString("UsuarioAtualizado", resourceCulture);
             }
         }
         

@@ -132,14 +132,17 @@
   <data name="SenhaAlterada" xml:space="preserve">
     <value>Senha alterada com sucesso.</value>
   </data>
-  <data name="SenhaAtualInvalida" xml:space="preserve">
-    <value>Senha atual incorreta.</value>
+  <data name="SenhaConfirmarSenhaInvalida" xml:space="preserve">
+    <value>Senha e confirmar senha devem ser iguais.</value>
   </data>
-  <data name="SenhaTamanhoInválido" xml:space="preserve">
+  <data name="SenhaTamanhoInvalido" xml:space="preserve">
     <value>Senha deve possuir de 6 a 30 caracteres.</value>
   </data>
   <data name="SenhaVazia" xml:space="preserve">
     <value>Senha não pode ser vazia.</value>
+  </data>
+  <data name="UsuarioAtualizado" xml:space="preserve">
+    <value>Usuário atualizado com sucesso.</value>
   </data>
   <data name="UsuarioCadastrado" xml:space="preserve">
     <value>Usuário cadastrado com sucesso.</value>

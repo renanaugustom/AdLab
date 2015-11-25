@@ -40,7 +40,12 @@ input.ng-invalid.ng-dirty {
     color: red;
 }
 
-h2 {
+h2, h3, h4, h5{
     color: #339054;
     border-color: #339054;
+}
+
+.errorList {
+    z-index:100;
+    position: absolute;
 }

@@ -7,7 +7,7 @@ namespace Domain.Validation
         public static void AssertIsValid(string password)
         {
             AssertionConcern.AssertArgumentNotNull(password, Messages.SenhaVazia);
-            AssertionConcern.AssertArgumentLength(password, 6, 30, Messages.SenhaTamanhoInválido);
+            AssertionConcern.AssertArgumentLength(password, 6, 30, Messages.SenhaTamanhoInvalido);
         }
 
         public static string Encrypt(string password)

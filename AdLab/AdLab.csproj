@@ -80,11 +80,13 @@
     <Content Include="app\services\APIInteceptor.js" />
     <Content Include="app\services\loadingInterceptor.js" />
     <Content Include="app\services\loginService.js" />
+    <Content Include="app\services\perfilService.js" />
     <Content Include="app\services\userService.js" />
     <Content Include="content\custom.css" />
     <Content Include="content\login.css" />
     <Content Include="images\logo.png" />
     <Content Include="images\load.gif" />
+    <Content Include="images\menu.png" />
     <Content Include="packages.config" />
     <Content Include="bower.json" />
     <Content Include="package.json" />

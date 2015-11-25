@@ -1,4 +1,7 @@
-﻿using Domain.DTO.Usuario;
+﻿using API.Map;
+using AutoMapper;
+using Domain.DTO.Usuario;
+using Domain.Models;
 using Domain.Resources;
 using Service.Usuarios;
 using System;
@@ -18,6 +21,11 @@ namespace API.Controllers
         public UsuarioController(IUsuarioService usuarioService)
         {
             _usuarioService = usuarioService;
+        }
+
+        static UsuarioController()
+        {
+            MapperFactory.Map<Usuario, UsuarioGetDTO>();
         }
 
         [HttpGet]
@@ -52,9 +60,10 @@ namespace API.Controllers
         {
             try
             {
-                var usuario = _usuarioService.BuscaPeloLogin(login);
-                var resposta = _usuarioService.CreateDataResponse(usuario, "");
+                var usuario = _usuarioService.BuscarPeloLogin(login);
+                UsuarioGetDTO usu = MapperFactory.Create<Usuario, UsuarioGetDTO>(usuario);
 
+                var resposta = _usuarioService.CreateDataResponse(usu, "");
                 return Request.CreateResponse(HttpStatusCode.OK, resposta);
             }
             catch (Exception e)
@@ -64,13 +73,15 @@ namespace API.Controllers
         }
 
         [HttpPut]
-        [Route("alterarsenha")]
-        public HttpResponseMessage AlterarSenha(UsuarioAtualizaSenhaDTO usuAtuSenha)
+        [Route("atualizar")]
+        public HttpResponseMessage AtualizarUsuario(UsuarioPutDTO usuAtualizar)
         {
             try
             {
-                _usuarioService.AlterarSenha(usuAtuSenha.Login, usuAtuSenha.SenhaAtual, usuAtuSenha.NovaSenha);
-                var resposta = _usuarioService.CreateDataResponse(null, Messages.SenhaAlterada);
+                _usuarioService.AlterarUsuario(usuAtualizar.Login, usuAtualizar.Nome, usuAtualizar.Email, 
+                    usuAtualizar.AlterarSenha, usuAtualizar.Senha, usuAtualizar.ConfirmarSenha);
+
+                var resposta = _usuarioService.CreateDataResponse(null, Messages.UsuarioAtualizado);
 
                 return Request.CreateResponse(HttpStatusCode.OK, resposta);
             }

@@ -4,33 +4,26 @@
 
     angular.module('app.controllers').controller('perfilController', perfilController);
 
-    function perfilController($scope, AlertService, UserService, UsuarioAPI) {
+    function perfilController($scope, PerfilService) {
         
         /*jshint validthis:true */
-        var vm = this;
+        var vc = this;
+        vc.vm = PerfilService;
+        vc.vm.carregarPerfil();
 
-        function init() {
-            vm.Perfil = {
-                Nome: null,
-                Login: null,
-                Email: null,
-                Senha: null,
-                ConfirmarSenha: null,
-                AlterarSenha: false
-            };
+
+        vc.atualizarPerfil = function (form) {
+            form.submitted = true;
+            if (validaForm(form))
+                vc.vm.atualizarPerfil();
+        };
+
+
+        function validaForm(form) {
+            if (form.$invalid)
+                return false;
+            
+            return true;
         }
-        init();
-
-        function load() {
-            var usuarioLogado = service.getCurrentUser();
-
-            UsuarioAPI.buscaPeloLogin(usuarioLogado.user, function (resposta) {
-                vm.Perfil = angular.copy(resposta.data);
-            }, function (error) {
-                AlertService.addError(error.message);
-            });
-        }
-        load();
-
     }
 })();
