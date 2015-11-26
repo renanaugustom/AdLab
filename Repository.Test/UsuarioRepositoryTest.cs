@@ -1,19 +1,11 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Repository;
-using Moq;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Repository.Usuarios;
-using Domain.Models;
-using System.Collections.Generic;
-using System.Linq;
-using System.Data.Entity;
-using Domain;
 using System.Data.Common;
 
 namespace Repository.Test
 {
     [TestClass]
-    public class UnitTest1
+    public class UsuarioRepositoryTest
     {
         DbConnection connection;
         MockAppContext databaseContext;
@@ -25,7 +17,6 @@ namespace Repository.Test
             connection = Effort.DbConnectionFactory.CreateTransient();
             databaseContext = new MockAppContext(connection);
             objRepo = new UsuarioRepository(databaseContext);
-
         }
 
         [TestMethod]
