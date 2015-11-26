@@ -22,12 +22,10 @@ namespace Repository.Test
         [TestMethod]
         public void BuscaPeloLogin_Test()
         {
-            // Try finding a product by id
             var usuario = objRepo.BuscaPeloLogin("renan");
 
             Assert.AreEqual("123456", usuario.Senha);
             Assert.AreEqual("renan.augusto18@gmail.com", usuario.Email);
-
         }
     }
 }
